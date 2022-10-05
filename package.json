@@ -1,0 +1,19 @@
+{
+  "name": "example-web-components",
+  "version": "1.0.0",
+  "description": "* example-web-components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvanastasov/example-web-components.git"
+  },
+  "author": "Georgi Anastasov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvanastasov/example-web-components/issues"
+  },
+  "homepage": "https://github.com/gvanastasov/example-web-components#readme"
+}

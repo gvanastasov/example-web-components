@@ -5,8 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example Web-Components</title>
+    <script src="js/main.umd.js"></script>
 </head>
 <body>
-    Helloa
+    <h1>Example web components</h1>
+
+    <time-formatted
+        id="elem"
+        hour="numeric" 
+        minute="numeric" 
+        second="numeric"
+    ></time-formatted>
+
+    <script>
+        setInterval(() => elem.setAttribute('datetime', new Date()), 1000);
+    </script>
 </body>
 </html>

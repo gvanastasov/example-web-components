@@ -2,8 +2,11 @@
   "name": "example-web-components",
   "version": "1.0.0",
   "description": "* example-web-components",
-  "main": "index.js",
+  "main": "dist/main.cjs.js",
+  "module": "dist/main.esm.js",
+  "browser": "public/js/main.umd.js",
   "scripts": {
+    "build": "rollup --config rollup.config.js",
     "start": "node server.js",
     "watch": "cross-env NODE_ENV=development nodemon server.js --ignore index.html"
   },
@@ -22,7 +25,9 @@
     "livereload": "^0.9.3"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.2",
     "cross-env": "^7.0.3",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "rollup": "^3.2.5"
   }
 }

@@ -15,10 +15,7 @@ class TimeFormatted extends BaseComponent {
         }).format(date);
     }
 
-    // array of attribute names to monitor for changes
-    static get observedAttributes() {
-        return ['datetime', 'year', 'month', 'day', 'hour', 'minute', 'second', 'time-zone-name'];
-    }
+    props = ['datetime', 'year', 'month', 'day', 'hour', 'minute', 'second', 'time-zone-name'];
 }
 
 module.exports = TimeFormatted

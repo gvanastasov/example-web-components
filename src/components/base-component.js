@@ -17,7 +17,7 @@ class BaseComponent extends HTMLElement {
 
     // array of attribute names to monitor for changes
     static get observedAttributes() {
-        return [];
+        return this.props;
     }
 
     // callback when an observed attribute is modified
@@ -32,6 +32,9 @@ class BaseComponent extends HTMLElement {
 
     // element render function
     render() {}
+
+    // element observable props
+    props = []
 }
 
 module.exports = BaseComponent

@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example Web-Components</title>
     <script src="js/main.umd.js"></script>
+    <!-- jss -->
+    <style>
+        .override {
+            color: blue
+        }
+    </style>
 </head>
 <body>
     <h1>Example web components</h1>
@@ -16,6 +22,7 @@
         minute="numeric" 
         second="numeric"
     ></time-formatted>
+    <button is="example-button" onClick="() => console.log('clicked')" class="override">Increase</button>
 
     <script>
         setInterval(() => elem.setAttribute('datetime', new Date()), 1000);

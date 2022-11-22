@@ -1,4 +1,7 @@
+const replace = require('rollup-plugin-replace')
 const commonjs = require('@rollup/plugin-commonjs')
+const sourcemaps = require('rollup-plugin-sourcemaps')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const pkg = require('./package.json')
 
 const package = {
@@ -7,7 +10,7 @@ const package = {
     { file: pkg.main, format: 'cjs' },
     { file: pkg.module, format: 'es' }
   ],
-  plugins: [commonjs()]
+  plugins: [commonjs(), nodeResolve()]
 };
 
 const script = {
@@ -15,9 +18,17 @@ const script = {
   output: {
     name: 'example-web-components',
     file: pkg.browser,
-    format: 'umd'
+    format: 'umd',
+    sourcemap: true
   },
-  plugins: [commonjs()]
+  plugins: [
+    replace({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+    }),
+    commonjs(),
+    sourcemaps(),
+    nodeResolve()
+  ]
 }
 
 module.exports = [package, script];

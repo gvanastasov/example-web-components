@@ -8,24 +8,40 @@
     <script src="js/main.umd.js"></script>
     <!-- jss -->
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: cornflowerblue;
+        }
+
+        .container {
+            background-color: aliceblue;
+            border-radius: 4px;
+            border: 1px solid gainsboro;
+            padding: 50px 100px;
+            text-align: center;
+        }
+
         .override {
             color: blue
         }
     </style>
 </head>
 <body>
-    <h1>Example web components</h1>
-
-    <time-formatted
-        id="elem"
-        hour="numeric" 
-        minute="numeric" 
-        second="numeric"
-    ></time-formatted>
-    <button is="example-button" onClick="() => console.log('clicked')" class="override">Increase</button>
-
-    <script>
-        setInterval(() => elem.setAttribute('datetime', new Date()), 1000);
-    </script>
+    <div class="container">
+        <h1>Example Web-Components</h1>
+        <test-component></test-component>
+        <button is="example-button" onClick="() => console.log('clicked')">Primary</button>
+        <button is="example-button" type="secondary" onClick="() => console.log('clicked')">Secondary</button>
+        <button is="example-button" onClick="() => console.log('clicked')" style="color: red">Inlined</button>
+        <button is="example-button" onClick="() => console.log('clicked')" class="override">Classed</button>
+    </div>
 </body>
 </html>

@@ -1,8 +1,9 @@
-const TimeFormatted = require("./components/time-formatted");
 const ExampleButton = require("./components/example-button");
 const jss = require('jss').default;
+const preset = require('jss-preset-default').default
 
-jss.setup({ insertionPoint: 'jss' })
+jss.setup({...preset(), insertionPoint: 'jss'})
 
-customElements.define('time-formatted', TimeFormatted);
 customElements.define('example-button', ExampleButton, { extends: 'button' })
+
+require('./components/test-component').register();
